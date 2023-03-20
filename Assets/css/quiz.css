@@ -1,0 +1,41 @@
+:root {
+    --blue: #174de3;
+}
+
+body {
+    color: white;
+}
+
+.answer-container {
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 15px;
+    background: var(--blue);
+    font-size: 20px;
+}
+
+.answer-container:hover {
+    cursor: pointer;
+    box-shadow: 0 1px 20px 0 var(--button);
+}
+
+.choice {
+    padding: 15px;
+    width: 100%;
+}
+
+
+#display {
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-pre {
+    text-align: center;
+    font-size: 40px;
+}
+
+.display-item {
+    text-align: center;
+}
