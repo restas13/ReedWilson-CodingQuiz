@@ -57,6 +57,19 @@ h2 {
     border-radius: 15px;
 }
 
+.exitButton {
+    font-size: 35px;
+    padding: 30px;
+    width: 200px;
+    height: auto;
+    margin-bottom: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background: linear-gradient(90deg, var(--button) 0%, var(--button) 100%);
+    border-radius: 15px;
+}
+
 .button:hover {
     cursor: pointer;
     box-shadow: 0 5px 20px 0 var(--button);
@@ -83,4 +96,12 @@ h2 {
 #nameText {
     color: white;
     margin-top: 15px;
+}
+
+#scoreCont {
+    color: white;
+    text-align: center;
+    list-style: none;
+    margin: none;
+    font-size: 20px;
 }

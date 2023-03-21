@@ -94,6 +94,7 @@ function ending(event) {
     console.log('end');
     localStorage.setItem('score', score);
     console.log(localStorage.getItem('score') + " is the score");
+    endScore.textContent = 'Your score is: ' + localStorage.getItem('score');
 }
 
 choices.forEach(choice =>{
