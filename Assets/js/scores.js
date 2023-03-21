@@ -8,7 +8,7 @@ var score = localStorage.getItem('score');
 var scores = [];
 var names = [];
 
-
+endScore.textContent = "Your score is: " + score;
 
 function renderScores() {
     userScore.innerHTML = "";
