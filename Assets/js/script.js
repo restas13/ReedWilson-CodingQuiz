@@ -89,7 +89,9 @@ function myTimer() {
 
 
 function ending() {
-
+    console.log('end');
+    localStorage.setItem('score', score);
+    document.location.href = 'end.html';
 }
 
 choices.forEach(choice =>{
