@@ -62,3 +62,12 @@ h2 {
     box-shadow: 0 5px 20px 0 var(--button);
 }
 
+.input {
+    width: 500px;
+    height: 50px;
+
+    font-size: 25px;
+
+    border-radius: 20px;
+}
+

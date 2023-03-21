@@ -1,4 +1,5 @@
 var question = document.querySelector('#question');
+var choices = Array.from(document.querySelectorAll('.choice'))
 var choice1 = document.querySelector('#choice1');
 var choice2 = document.querySelector('#choice2');
 var choice3 = document.querySelector('#choice3');
@@ -56,6 +57,25 @@ var questions = [
     },
 ]
 
+nextQuestion();
+
+function nextQuestion() {
+    if (currentQuestion >= questions.length) {
+        console.log('hello');
+        ending();
+        return;
+    }
+
+    question.textContent = questions[currentQuestion].question;
+
+    choice1.textContent = questions[currentQuestion].choice1;
+    choice2.textContent = questions[currentQuestion].choice2;
+    choice3.textContent = questions[currentQuestion].choice3;
+    choice4.textContent = questions[currentQuestion].choice4;
+
+    
+}
+
 setInterval(myTimer, 1000);
 
 function myTimer() {
@@ -70,4 +90,21 @@ function myTimer() {
 
 function ending() {
 
+}
+
+choices.forEach(choice =>{
+    choice.addEventListener('click', chosen);
+});
+
+function chosen(event){
+    event.preventDefault();
+
+    if (event.target.innerText == questions[currentQuestion].answer) {
+        currentQuestion ++;
+        nextQuestion();
+    }else{
+        currentQuestion++;
+        nextQuestion();
+        score -= 15;
+    }
 }
