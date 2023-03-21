@@ -60,11 +60,11 @@ var questions = [
 nextQuestion();
 
 function nextQuestion() {
-    if (currentQuestion >= questions.length) {
+    /*if (currentQuestion >= questions.length) {
         console.log('hello');
         ending();
         return;
-    }
+    }*/
 
     question.textContent = questions[currentQuestion].question;
 
@@ -88,10 +88,12 @@ function myTimer() {
 }
 
 
-function ending() {
+function ending(event) {
+    //event.preventDefault();
+    document.location.href = 'end.html';
     console.log('end');
     localStorage.setItem('score', score);
-    document.location.href = 'end.html';
+    console.log(localStorage.getItem('score') + " is the score");
 }
 
 choices.forEach(choice =>{
@@ -102,11 +104,21 @@ function chosen(event){
     event.preventDefault();
 
     if (event.target.innerText == questions[currentQuestion].answer) {
-        currentQuestion ++;
-        nextQuestion();
+        if (currentQuestion + 1 >= questions.length) {
+            ending();
+            return;
+        }else {
+            currentQuestion ++;
+            nextQuestion();
+        }          
     }else{
-        currentQuestion++;
-        nextQuestion();
-        score -= 15;
+        if (currentQuestion + 1 >= questions.length) {
+            ending();
+            return;
+        }else {
+            currentQuestion ++;
+            nextQuestion();
+            score -= 15;
+        }        
     }
 }

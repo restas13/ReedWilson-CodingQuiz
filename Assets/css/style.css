@@ -71,3 +71,16 @@ h2 {
     border-radius: 20px;
 }
 
+#finish {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#currScore {
+    color: white;
+}
+
+#nameText {
+    color: white;
+    margin-top: 15px;
+}
